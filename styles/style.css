@@ -11,6 +11,337 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
   min-inline-size: 320px;
+  max-inline-size: 700px;
   min-block-size: 100dvb;
+  font-family: var(--Inter), sans-serif;
+  font-variation-settings: 'wght' var(--main-text-weight); /* позволяет точно управлять вариативными шрифтами */
+  background-image: var(--bg-image);
+  background-color: #E7E7E7;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-block: 100px;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding-inline: var(--header-padding-inline);
+  padding-block: var(--header-padding-block);
+  margin-bottom: 100px;
+  border: 2px solid #000;
+  gap: 20px;
+}
+
+.inline-size {
+  inline-size: var(--inline-size);
+}
+
+.main__title {
+  font-family: var(--PressStart2P), fantasy;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+.main__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 49px;
+}
+
+.section__card {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card__title {
+  padding: 4px 10px 6px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--title-weight);
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+  line-height: 21px;
+  font-size: 18px;
+}
+
+.img__wrapper {
+  position: relative;
+  border-block-start: 2px solid #000;
+  border-block-end: 2px solid #000;
+}
+
+.card__image {
+  display: block;
+  background-size: cover;
+  inline-size: var(--inline-size);
+  object-position: center;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  
+}
+
+/* Фильтры картинок */
+.card__image .card__image-contrast {
+  filter: contrast(120%) grayscale(50%) saturate(130%);
+}
+
+.card__image .card__image-saturate {
+  filter: saturate(380%);
+}
+
+.card__image .card__image-hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.card__image .card__image-grayscale {
+  filter: contrast(85%) grayscale(0.7);
+}
+
+.card__image .card__image-invert {
+  filter: invert(0.7);
+}
+
+.card__image .card__image-blur {
+  filter: blur(5px);
+}
+
+.card__image .card__image-brightness {
+  filter: brightness(70%);
+}
+
+.card__image .card__image-sepia {
+  filter: sepia(90%);
+}
+
+.filter__combined {
+  filter: saturate(230%) contrast(60%) hue-rotate(80deg) blur(2px) opacity(0.8)
+    sepia(35%) grayscale(0.3);
+}
+
+.card__label {
+  position: absolute;
+  font-family: var(--PressStart2P), fantasy;
+  font-size: 14px;
+  color: #000;
+  top: 25px;
+  right: 13px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+.card__like-area {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+  padding: 0 25px 25px 0;
+}
+
+.card__icon-button {
+  display: flex;
+  align-self: center;
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: #000;
+}
+
+.like-icon {
+  display: block;
+  block-size: 34px;
+}
+
+/* стили для кнопок */
+.page_button-style {
+  font-family: var(--PressStart2P), fantasy;
+  background: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-weight: var(--main-text-weight) ;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 90%;
+  transition: box-shadow 0.3s ease;
+}
+
+.page_button-style::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.page_button-style:hover::before {
+  background-color: #000;
+  transform: scaleX(1);
+}
+
+.page_button-style:focus {
+  box-shadow: 2px 2px var(--main-text-color);
+  outline: none;
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.card__like-button {
+  padding: 12.5px 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-inline-size: 130px;
+  max-block-size: 38px;
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 34.5px 100px; */
+}
+
+.card__save-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 90%;
+  padding: 15px 17px;
+  background-color: #fff;
+}
+
+.floppy__icon {
+  mix-blend-mode: difference;
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+.dialog__popup[open] {
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ padding: 30px 42px;
+ transition: 0.5s ease-in-out;
+ max-inline-size: 341px;
+}
+
+.dialog__popup .floppy__icon {
+  color: #fff;
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__popup .button__text {
+  text-transform: uppercase;
+}
+
+.dialog__text {
+  font-family: var(--PressStart2P), fantasy;
+  text-transform: uppercase;
+  line-height: 150%;
+  font-size: 13.5px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / .75);
+}
+
+@media (width <= 375px) {
+  .header {
+    padding-inline: clamp(3.063rem, 1.429vw + 2.777rem, 4.063rem);
+    font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  }
+  
+  .page {
+    inline-size: 100%;
+    margin-block-end: 2px;
+  }
+}
+
+@media (width >= 768px) {
+  .card__save-button {
+    flex-direction: row;
+  }
+  
+  .header {
+    --header-padding-block: 128px;
+    padding-block: var(--header-padding-block);
+  }
+
+  .floppy__icon {
+    inline-size: 21px;
+    block-size: 21px;
+  }
+
+  .dialog__popup[open] {
+    max-inline-size: 353px;
+  }
+
+  .card__label {
+    right: 25px;
+  }  
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: 'Inter-Variable', sans-serif;
+    font-variation-settings: 'wght' var(--main-text-weight);
+  }
+  .card__title {
+    font-variation-settings: 'wght' var(--title-weight);
+  }
+} 
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--text-shadow);
+    text-stroke: 1px var(--text-shadow);
+    text-shadow: none;
+  }
+} 
