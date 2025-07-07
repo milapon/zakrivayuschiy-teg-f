@@ -98,7 +98,6 @@
   object-position: center;
   aspect-ratio: 1/1;
   background-repeat: no-repeat;
-  
 }
 
 /* Фильтры картинок */
@@ -325,7 +324,7 @@ dialog::backdrop {
 
   .card__label {
     right: 25px;
-  }  
+  }
 }
 
 @supports (font-variation-settings: normal) {
@@ -333,10 +332,11 @@ dialog::backdrop {
     font-family: 'Inter-Variable', sans-serif;
     font-variation-settings: 'wght' var(--main-text-weight);
   }
+
   .card__title {
     font-variation-settings: 'wght' var(--title-weight);
   }
-} 
+}
 
 @supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
   .card__label {
@@ -344,4 +344,4 @@ dialog::backdrop {
     text-stroke: 1px var(--text-shadow);
     text-shadow: none;
   }
-} 
+}
