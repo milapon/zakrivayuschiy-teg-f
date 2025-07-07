@@ -101,35 +101,35 @@
 }
 
 /* Фильтры картинок */
-.card__image .card__image-contrast {
+.card__image-contrast {
   filter: contrast(120%) grayscale(50%) saturate(130%);
 }
 
-.card__image .card__image-saturate {
+.card__image-saturate {
   filter: saturate(380%);
 }
 
-.card__image .card__image-hue-rotate {
+.card__image-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.card__image .card__image-grayscale {
+.card__image.card__image-grayscale {
   filter: contrast(85%) grayscale(0.7);
 }
 
-.card__image .card__image-invert {
+.card__image.card__image-invert {
   filter: invert(0.7);
 }
 
-.card__image .card__image-blur {
+.card__image.card__image-blur {
   filter: blur(5px);
 }
 
-.card__image .card__image-brightness {
+.card__image.card__image-brightness {
   filter: brightness(70%);
 }
 
-.card__image .card__image-sepia {
+.card__image.card__image-sepia {
   filter: sepia(90%);
 }
 
