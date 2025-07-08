@@ -298,10 +298,6 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-  .header {
-    padding-inline: clamp(3.063rem, 1.429vw + 2.777rem, 4.063rem);
-    font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  }
   
   .page {
     inline-size: 100%;
@@ -312,11 +308,6 @@ dialog::backdrop {
 @media (width >= 768px) {
   .card__save-button {
     flex-direction: row;
-  }
-  
-  .header {
-    --header-padding-block: 128px;
-    padding-block: var(--header-padding-block);
   }
 
   .floppy__icon {
