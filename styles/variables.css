@@ -6,12 +6,13 @@
     --title-weight: 700; /* толщин заголовка */
     --inline-size: 100%;
     --main-text-color: #000;
-    --header-padding-inline: 110px;
-    --header-padding-block: 120px;
+    --header-padding-inline: /* 110px; */ clamp(14px, 5vw, 120.5px);
+    --header-padding-block: /* 120px; */ clamp(120px, 2vw + 118px, 128px);
     --text-shadow: #fff;
     --bg-image: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px), 
                 repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px), 
                 linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --contour: #000;
     --heart-fill: #FF0000;
+    
 }
