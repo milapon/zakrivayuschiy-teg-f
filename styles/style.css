@@ -37,7 +37,7 @@
   background-color: #fff;
   padding-inline: var(--header-padding-inline);
   padding-block: var(--header-padding-block);
-  margin-bottom: 100px;
+  margin-block-end: 100px;
   border: 2px solid #000;
   gap: 20px;
 }
@@ -101,35 +101,35 @@
 }
 
 /* Фильтры картинок */
-.card__image.card__image-contrast {
+.card__image-contrast {
   filter: contrast(120%) grayscale(50%) saturate(130%);
 }
 
-.card__image.card__image-saturate {
+.card__image-saturate {
   filter: saturate(380%);
 }
 
-.card__image.card__image-hue-rotate {
+.card__image-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-.card__image.card__image-grayscale {
+.card__image-grayscale {
   filter: contrast(85%) grayscale(0.7);
 }
 
-.card__image.card__image-invert {
+.card__image-invert {
   filter: invert(0.7);
 }
 
-.card__image.card__image-blur {
+.card__image-blur {
   filter: blur(5px);
 }
 
-.card__image.card__image-brightness {
+.card__image-brightness {
   filter: brightness(70%);
 }
 
-.card__image.card__image-sepia {
+.card__image-sepia {
   filter: sepia(90%);
 }
 
@@ -147,6 +147,11 @@
   right: 13px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
+  text-shadow:
+    -1px -1 0 var(--text-shadow),
+    1px -1px 0 var(--text-shadow),
+    -1px 1px 0 var(--text-shadow),
+    1px 1px 0 var(--text-shadow);
 }
 
 .card__like-area {
@@ -202,16 +207,19 @@
   transform: scaleX(0);
   transition: 0.5s ease-in-out;
   transform-origin: left;
+  background-color: #000;
 }
 
 .page_button-style:hover::before {
-  background-color: #000;
   transform: scaleX(1);
 }
 
 .page_button-style:focus {
+  outline: none; 
+}
+
+.page_button-style:focus-visible {
   box-shadow: 2px 2px var(--main-text-color);
-  outline: none;
 }
 
 .button__text {
@@ -233,7 +241,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0 34.5px 100px; */
 }
 
 .card__save-button {
@@ -259,7 +266,6 @@
  flex-direction: column;
  gap: 30px;
  padding: 30px 42px;
- transition: 0.5s ease-in-out;
  max-inline-size: 341px;
 }
 
