@@ -10,6 +10,11 @@
 
 */
 
+* {
+  outline: 1px solid red; /* для отладки */
+}
+
+
 .page {
   display: flex;
   flex-direction: column;
@@ -35,7 +40,6 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  padding-inline: var(--header-padding-inline);
   padding-block: var(--header-padding-block);
   margin-block-end: 100px;
   border: 2px solid #000;
