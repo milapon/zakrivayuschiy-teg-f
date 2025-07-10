@@ -10,11 +10,6 @@
 
 */
 
-* {
-  outline: 1px solid red; /* для отладки */
-}
-
-
 .page {
   display: flex;
   flex-direction: column;
